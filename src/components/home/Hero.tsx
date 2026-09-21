@@ -3,7 +3,22 @@ import { heroPromises } from "@/data/site";
 import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
 import { CarLineArt } from "@/components/ui/Icons";
+import { HeroSlideshow, type HeroSlide } from "@/components/home/HeroSlideshow";
+import { vehicles } from "@/data/vehicles";
 import { QuickSearch } from "@/components/home/QuickSearch";
+
+/** The cover photo of every photographed car, in inventory order. */
+const slides: HeroSlide[] = vehicles
+  .filter((vehicle) => vehicle.images?.length)
+  .map((vehicle) => ({
+    src: vehicle.images![0].src,
+    alt: `${vehicle.brand} ${vehicle.model} ${vehicle.variant}`,
+    title: `${vehicle.brand} ${vehicle.model} ${vehicle.variant}`,
+    subtitle: [vehicle.year, vehicle.fuelType, vehicle.transmission]
+      .filter(Boolean)
+      .join(" · "),
+    href: `/inventory/${vehicle.slug}`,
+  }));
 
 export function Hero() {
   return (
@@ -52,10 +67,13 @@ export function Hero() {
             </ul>
           </div>
 
-          {/* Swap this panel for hero photography by dropping an <Image> in. */}
-          <div className="relative hidden aspect-[9/8] items-center justify-center overflow-hidden rounded-3xl border border-white/8 bg-linear-to-br from-ink-600 to-ink lg:flex">
-            <CarLineArt className="w-[72%] text-white/30" />
-          </div>
+          {slides.length > 0 ? (
+            <HeroSlideshow slides={slides} />
+          ) : (
+            <div className="relative hidden aspect-[9/8] items-center justify-center overflow-hidden rounded-3xl border border-white/8 bg-linear-to-br from-ink-600 to-ink lg:flex">
+              <CarLineArt className="w-[72%] text-white/30" />
+            </div>
+          )}
         </Container>
       </section>
 
