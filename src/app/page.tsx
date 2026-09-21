@@ -4,7 +4,6 @@ import { FinanceSection } from "@/components/home/FinanceSection";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 import { HowItWorks } from "@/components/home/HowItWorks";
 import { AboutSection } from "@/components/home/AboutSection";
-import { Testimonials } from "@/components/home/Testimonials";
 import { CTASection } from "@/components/home/CTASection";
 
 export default function HomePage() {
@@ -16,7 +15,6 @@ export default function HomePage() {
       <WhyChooseUs />
       <HowItWorks />
       <AboutSection />
-      <Testimonials />
       <CTASection />
     </>
   );

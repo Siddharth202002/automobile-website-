@@ -5,7 +5,31 @@ import { Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Field, Input, Select, Textarea } from "@/components/ui/Field";
 import { FormSuccess } from "@/components/forms/FormSuccess";
-import { brandOptions, fuelTypeOptions, transmissionOptions } from "@/lib/filters";
+import type { FuelType, Transmission } from "@/lib/types";
+
+/** Makes a seller might bring in — independent of what is currently in stock. */
+const sellableBrands = [
+  "Maruti Suzuki",
+  "Hyundai",
+  "Tata",
+  "Mahindra",
+  "Toyota",
+  "Honda",
+  "Kia",
+  "Renault",
+  "Volkswagen",
+  "Skoda",
+  "MG",
+  "Nissan",
+  "Ford",
+  "Jeep",
+  "BMW",
+  "Mercedes-Benz",
+  "Audi",
+];
+
+const fuelTypes: FuelType[] = ["Petrol", "Diesel", "CNG", "Hybrid", "Electric"];
+const transmissions: Transmission[] = ["Manual", "Automatic"];
 
 const years = Array.from({ length: 20 }, (_, index) => new Date().getFullYear() - index);
 
@@ -87,7 +111,7 @@ export function SellCarForm() {
             <option value="" disabled>
               Select brand
             </option>
-            {brandOptions.map((brand) => (
+            {sellableBrands.map((brand) => (
               <option key={brand} value={brand}>
                 {brand}
               </option>
@@ -127,7 +151,7 @@ export function SellCarForm() {
 
         <Field label="Fuel Type" htmlFor="sell-fuel">
           <Select id="sell-fuel" name="fuel" defaultValue="Petrol">
-            {fuelTypeOptions.map((fuel) => (
+            {fuelTypes.map((fuel) => (
               <option key={fuel} value={fuel}>
                 {fuel}
               </option>
@@ -137,7 +161,7 @@ export function SellCarForm() {
 
         <Field label="Transmission" htmlFor="sell-gearbox">
           <Select id="sell-gearbox" name="transmission" defaultValue="Manual">
-            {transmissionOptions.map((gearbox) => (
+            {transmissions.map((gearbox) => (
               <option key={gearbox} value={gearbox}>
                 {gearbox}
               </option>

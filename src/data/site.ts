@@ -58,11 +58,11 @@ export const footerLinks = {
     { label: "Contact", href: "/contact" },
   ],
   categories: [
-    { label: "Sedans", href: "/inventory?body=Sedan" },
     { label: "SUVs", href: "/inventory?body=SUV" },
+    { label: "MPVs", href: "/inventory?body=MPV" },
     { label: "Hatchbacks", href: "/inventory?body=Hatchback" },
-    { label: "Luxury Cars", href: "/inventory?min=30" },
-    { label: "Under ₹10 Lakh", href: "/inventory?max=10" },
+    { label: "Automatic Cars", href: "/inventory?gearbox=Automatic" },
+    { label: "Diesel Cars", href: "/inventory?fuel=Diesel" },
   ],
 } as const;
 

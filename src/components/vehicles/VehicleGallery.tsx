@@ -24,6 +24,9 @@ const thumbColumns: Record<number, string> = {
   4: "grid-cols-4",
   5: "grid-cols-5",
   6: "grid-cols-3 sm:grid-cols-6",
+  7: "grid-cols-4 sm:grid-cols-7",
+  8: "grid-cols-4 sm:grid-cols-8",
+  9: "grid-cols-5 sm:grid-cols-9",
 };
 
 /**
@@ -66,7 +69,7 @@ export function VehicleGallery({ vehicle }: { vehicle: Vehicle }) {
       <ul
         className={cn(
           "mt-4 grid gap-2.5 sm:gap-3",
-          thumbColumns[Math.min(frames.length, 6)] ?? "grid-cols-4 sm:grid-cols-6",
+          thumbColumns[frames.length] ?? "grid-cols-5 sm:grid-cols-9",
         )}
       >
         {frames.map((frame, index) => (
