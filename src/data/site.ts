@@ -120,9 +120,9 @@ export const whyChooseUs = [
     body: "One fair price, benchmarked against live market data. No inflated sticker, no theatrical discount.",
   },
   {
-    icon: "refresh",
-    title: "5-day exchange window",
-    body: "Drive it for five days. If the car is not what we said it was, bring it back and we will make it right.",
+    icon: "handshake",
+    title: "With you after the sale",
+    body: "Our job doesn't end when you drive away. For servicing advice, paperwork or any issue with your car, just call us — we stay with you long after you buy.",
   },
   {
     icon: "wallet",
@@ -248,10 +248,5 @@ export const faqs = [
     question: "Do you handle the RC transfer and RTO work?",
     answer:
       "Yes, end to end. We prepare the forms, handle the RTO visits, and take care of the insurance transfer and any loan NOC — you just sign where needed. We keep you updated until the RC is in your name.",
-  },
-  {
-    question: "What if the car is not right for me?",
-    answer:
-      "Every car comes with a 5-day exchange window. Return it within five days or 300 km and pick something else from the inventory.",
   },
 ] as const;

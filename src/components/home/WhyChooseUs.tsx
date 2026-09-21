@@ -1,6 +1,6 @@
 import {
   FileCheck2,
-  RefreshCcw,
+  Handshake,
   ShieldCheck,
   Tag,
   Truck,
@@ -15,7 +15,7 @@ const icons: Record<string, LucideIcon> = {
   shield: ShieldCheck,
   file: FileCheck2,
   tag: Tag,
-  refresh: RefreshCcw,
+  handshake: Handshake,
   wallet: Wallet,
   truck: Truck,
 };

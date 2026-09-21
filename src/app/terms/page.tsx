@@ -34,12 +34,6 @@ const sections: LegalSection[] = [
     ],
   },
   {
-    heading: "Exchange window",
-    body: [
-      "Vehicles sold with a stated exchange window may be returned within that window subject to the mileage and condition limits set out in your sale agreement.",
-    ],
-  },
-  {
     heading: "Contact",
     body: [`Queries about these terms can be sent to ${site.email}.`],
   },
